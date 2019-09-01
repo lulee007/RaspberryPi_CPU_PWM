@@ -54,9 +54,9 @@ while true
   done < $CONF
   
   #计算pwm值，从变量set_temp_min设置的温度开始开启风扇，最低转速50%
-  pwm=$((($tmp-$set_temp_min)*1003/($set_temp_max-$set_temp_min)+1002))
-  if [ $pwm -le 1002 ] ;then
-  pwm=1003
+  pwm=$((($tmp-$set_temp_min)*15/($set_temp_max-$set_temp_min)+1008))
+  if [ $pwm -le 1008 ] ;then
+  pwm=1008
   fi
 
   #设置pwm值上限
