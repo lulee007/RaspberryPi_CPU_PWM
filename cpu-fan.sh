@@ -52,7 +52,7 @@ while true; do
     gpio write 15 1
     fan=1
     pwm=1
-    echo "$(date) temp=$tmp MODE=$MODE CPU load=$load 超过设置温度开启风扇" #>>$LOG
+    echo "$(date) temp=$tmp MODE=$MODE CPU load=$load 超过设置温度开启风扇" >>$LOG
     sleep 1
   fi
 
@@ -61,7 +61,7 @@ while true; do
     fan=0
     gpio write 15 $pwm
     sleep 5
-    echo "$(date) temp=$tmp MODE=$MODE CPU load=$load 小于设置温度关闭风扇 " #>>$LOG
+    echo "$(date) temp=$tmp MODE=$MODE CPU load=$load 小于设置温度关闭风扇 " >>$LOG
   else
 
     #检查MODE，为0时关闭风扇
